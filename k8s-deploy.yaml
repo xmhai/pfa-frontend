@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pfa-frontend-deployment
+  labels:
+    component: pfa-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: pfa-frontend
+  template:
+    metadata:
+      labels:
+        component: pfa-frontend
+    spec:
+      containers:
+        - name: pfa-frontend
+          image: harbor.home:9443/library/pfa-frontend
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+          stdin: true
+          tty: true
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: pfa-frontend-service
+spec:
+  type: ClusterIP
+  selector:
+    component: pfa-frontend
+  ports:
+    - port: 80
+      targetPort: 80
