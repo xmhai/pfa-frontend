@@ -32,6 +32,7 @@ class StockForm extends React.Component {
           <Field name="category" label="Asset Category:" component={HtmlSelect} data={this.props.categories} />
           <Field name="currency" label="Currency:" component={HtmlSelect} data={this.props.currencies} />
           <Field name="latestPrice" label="Latest Price:" component={HtmlInput} />
+          <Field name="updatedDate" label="Latest Updated Date:" component={HtmlInput} />
           <div className="pfa-form-button">
             <button className="ui button primary">Submit</button>
             <Link to="/stocks" className="ui button">
