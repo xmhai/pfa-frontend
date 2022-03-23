@@ -1,9 +1,9 @@
 import axios from 'axios';
 
-export const commonService = axios.create({ baseURL: process.env.REACT_APP_AXIOS_BASE_URL+'/api/common' });
-export const accountService = axios.create({ baseURL: process.env.REACT_APP_AXIOS_BASE_URL+'/api/account' });
-export const stockService = axios.create({ baseURL: process.env.REACT_APP_AXIOS_BASE_URL+'/api/stock' });
-export const jobService = axios.create({ baseURL: process.env.REACT_APP_AXIOS_BASE_URL+'/api/job' });
+export const commonService = axios.create({ baseURL: process.env.REACT_APP_AXIOS_COMMON_SERVICE_URL });
+export const accountService = axios.create({ baseURL: process.env.REACT_APP_AXIOS_ACCOUNT_SERVICE_URL });
+export const stockService = axios.create({ baseURL: process.env.REACT_APP_AXIOS_STOCK_SERVICE_URL });
+export const jobService = axios.create({ baseURL: process.env.REACT_APP_AXIOS_JOB_SERVICE_URL });
 
 const setupAxiosInterceptors = (store) => {
     const { dispatch } = store;
